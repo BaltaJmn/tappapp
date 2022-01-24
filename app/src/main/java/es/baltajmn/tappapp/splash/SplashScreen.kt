@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.View
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import es.baltajmn.tappapp.MainActivity
 import es.baltajmn.tappapp.R
@@ -18,10 +20,19 @@ class SplashScreen : AppCompatActivity() {
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
+
+        binding.titleSplash.visibility = View.VISIBLE
+        binding.iconSplash.visibility = View.VISIBLE
+
+        val animationFadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+        binding.titleSplash.startAnimation(animationFadeIn)
+        binding.iconSplash.startAnimation(animationFadeIn)
+
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
-        }, 3000)
+        }, 2000)
     }
 }

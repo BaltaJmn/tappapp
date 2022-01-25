@@ -15,5 +15,4 @@ class TotalFragment : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_total, container, false)
     }
-
 }

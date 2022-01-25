@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">tappapp</string>
     <string name="app_name_splash">Tappapp</string>
+    <string name="shared_preferences">tappapp_preferences</string>
 </resources>

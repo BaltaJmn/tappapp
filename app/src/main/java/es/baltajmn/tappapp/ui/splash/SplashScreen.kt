@@ -1,4 +1,4 @@
-package es.baltajmn.tappapp.splash
+package es.baltajmn.tappapp.ui.splash
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.os.Looper
 import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
-import es.baltajmn.tappapp.MainActivity
+import es.baltajmn.tappapp.ui.activity.MainActivity
 import es.baltajmn.tappapp.R
 import es.baltajmn.tappapp.databinding.ActivitySplashScreenBinding
 

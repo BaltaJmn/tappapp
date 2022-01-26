@@ -1,5 +1,7 @@
-package es.baltajmn.tappapp
+package es.baltajmn.tappapp.ui.activity
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
@@ -8,20 +10,27 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import es.baltajmn.tappapp.R
 import es.baltajmn.tappapp.databinding.ActivityMainBinding
-import es.baltajmn.tappapp.fragment.OrderFragment
-import es.baltajmn.tappapp.fragment.TotalFragment
-import es.baltajmn.tappapp.fragment.UserFragment
+import es.baltajmn.tappapp.ui.fragment.OrderFragment
+import es.baltajmn.tappapp.ui.fragment.TotalFragment
+import es.baltajmn.tappapp.ui.fragment.UserFragment
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var sharedPreferences: SharedPreferences
     private var page = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        sharedPreferences = this.getSharedPreferences(
+            getString(R.string.shared_preferences), Context.MODE_PRIVATE
+        )
+        sharedPreferences.edit().clear().apply()
 
         val wormsIndicator = binding.dotsIndicator
         val adapter = ViewPagerAdapter(this)

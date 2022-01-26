@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FEFEFA"
-    tools:context=".MainActivity">
+    tools:context=".ui.activity.MainActivity">
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chip_group"
